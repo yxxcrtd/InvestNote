@@ -1,0 +1,271 @@
+$head_bg:#f5f5f5;
+@import "public";  
+$color:#969696;
+.pl{
+    position:relative;
+}
+.color2e54a5{
+    color:#2e54a5;
+}
+.colorf15438{
+    color:#f15438;
+}
+.mb132{
+    margin-bottom: 20rem/$default-fontSize;
+}
+.mg68{
+    margin:46rem/$default-fontSize 0 22rem/$default-fontSize;    
+}
+.mb158{ 
+    margin-bottom: 20rem/$default-fontSize;     
+}
+.mb122{
+    margin-bottom: 20rem/$default-fontSize;    
+}
+$pd:0 48rem/$default-fontSize 0 70rem/$default-fontSize;
+.plpd{   
+    padding:$pd;
+}
+a:hover{
+    @extend .color2e54a5;  
+}  
+
+.detail_list{
+    $fontSize:26rem/$default-fontSize;  
+    padding:$pd; 
+    dl{
+        margin-top:50rem/$default-fontSize;   
+        color:$color;
+    }
+    dt{
+        float:left; 
+        font-size:$fontSize;
+    }
+    dd{
+        margin-left:80rem/$default-fontSize;
+        word-break:break-all; 
+        word-wrap:break-word;
+        font-size:$fontSize; 
+        >.fontSize26{
+             font-size:$fontSize;
+             vertical-align: middle;
+        }
+        
+    }
+    .clearFont{
+        font-size:0;
+    }
+  
+}
+.gpcode{
+    color:#9F9FA6;
+    font-size:22rem/$default-fontSize;  
+}
+.default{
+     dd{
+        color:#282828;   
+    }
+} 
+.footer{
+     font-size:22rem/$default-fontSize; 
+     color:$color;
+     text-align: center; 
+}
+  .readInfo{
+        padding:$pd;
+        margin:80rem/$default-fontSize 0 0;
+        @extend .footer;
+        >p{
+           line-height: 36rem/$default-fontSize;  
+        }
+    }
+.mt45{
+    margin-top:105rem/$default-fontSize;
+}
+.fsize{
+    font-size:28rem/$default-fontSize;
+}
+.newMoney{
+    font-size:30rem/$default-fontSize;
+    margin-bottom:20rem/$default-fontSize;
+    display: inline-block;
+    color:#2e54a5;
+}
+.page_tip{
+    @extend .footer;
+}
+//success 
+.chapter_success{
+    width:166rem/$default-fontSize; 
+    height:166rem/$default-fontSize;  
+    background: url(../img/db.png) 0 0 no-repeat;
+    position:absolute;
+    left:1.5rem;
+    top:50%;
+    @include css3(transform,translateY(-42%));
+    background-size:cover;
+}
+//fail
+.chapter_fail{ 
+    background: url(../img/dbdis.png) 0 0 no-repeat;
+    background-size:cover;
+}
+//disable
+.chapter_disable{ 
+    background: url(../img/diableImg.png) 0 0 no-repeat; 
+    background-size:cover;
+}
+//share tip
+.share_tip{
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    z-index:500;
+    >i{
+       display: inline-block;
+       margin:3rem/$default-fontSize 0 0 50.625%;
+       height:169rem/$default-fontSize;
+       width:284rem/$default-fontSize;
+       background:url(../img/shareArrow.png) 0 0 no-repeat; 
+       background-size:cover;
+    }
+}
+.mgclear{
+    margin:0;
+}
+//评论
+.commontDetail{
+    margin-top:24rem/$default-fontSize;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom:10rem/$default-fontSize;
+}
+.commontHead{
+    font-size:24rem/$default-fontSize;
+    $pd:24rem/$default-fontSize;
+    padding:$pd;
+    height:32rem/$default-fontSize;
+    line-height: 32rem/$default-fontSize;
+    position: relative;
+    color:#969696;
+    $border:1px solid #dcdcdc;
+    border-bottom:$border;
+    border-top:$border;
+    >a{
+        position:absolute; 
+        margin:auto 0;
+        top:0;
+        bottom:0;
+        right:$pd;
+        color:#2E54A5;
+        height:32rem/$default-fontSize;
+        line-height:32rem/$default-fontSize;
+        padding-left:20rem/$default-fontSize;
+        border-left:1px solid #d8d8d8;
+    }
+}
+.commontCont{
+    margin-left:24rem/$default-fontSize;
+    li{
+        display: table;
+        width:100%;
+        margin-top:30rem/$default-fontSize;
+        >img{
+            display: table-cell;
+            height:60rem/$default-fontSize;
+            width:60rem/$default-fontSize;
+        }
+        border-bottom:1px solid #dcdcdc;
+    }
+    li:last-child{
+        border-bottom:none;
+    }
+}
+.commontWord{
+    display: table-cell;
+    vertical-align: top;
+    padding-left:20rem/$default-fontSize;
+    padding-right:24rem/$default-fontSize;
+    >p:first-child{
+        font-size:28rem/$default-fontSize;
+        color:#969696;
+        line-height: 28rem/$default-fontSize;
+        >em{
+            font-size:20rem/$default-fontSize;
+            color:#dcdcdc;
+            line-height: 30rem/$default-fontSize;
+        }
+    }
+    >p:last-child{
+        font-size:22rem/$default-fontSize;
+        color:#282828;
+        line-height:30rem/$default-fontSize;
+        margin:13rem/$default-fontSize 0 26rem/$default-fontSize;
+    }
+}
+//写评论
+.writeCom{
+    background:$body_bg;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    @include css3(transform,translateX(100%));
+    @include css3(transition,transform .5s);
+    padding-top:23rem/$default-fontSize;
+    z-index:10;
+    a,a:link,a:active,a:visited{
+        color:#969696;
+    }
+    textarea{ 
+        $border:1px solid #DCDCDC;
+        border:none;
+        border-bottom:$border;
+        border-top:$border;
+        width:100%;
+        height:316rem/$default-fontSize;
+        outline: none;
+        padding:15rem/$default-fontSize 0 0 25rem/$default-fontSize;
+        font-size: 0.4375rem;
+        @include css3(box-sizing,border-box);
+        vertical-align: bottom;
+    }
+    .commentBtn{
+        line-height: 100rem/$default-fontSize;
+        background-color:#fff;
+        $pd:24rem/$default-fontSize;
+        position: relative;
+        padding-left:$pd;
+        font-size:28rem/$default-fontSize;
+        color:#969696;
+        >a{
+            position:absolute;
+            right:$pd;
+            top:0;
+            bottom:0;
+            margin:auto 0;
+            height:56rem/$default-fontSize;
+            width:120rem/$default-fontSize;
+            line-height: 56rem/$default-fontSize;
+            background: #f5f5f5;
+            @include css3(border-radius,10rem/$default-fontSize);
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+    .hoverClass{
+        color:#fff!important;
+        background: #2e54a5!important;
+    }
+}
+//写评论动画
+.commontAnimShow{
+    @include css3(transform,translate3d(0,0,0));
+}
+.commontAnimHide{
+    @include css3(transform,translate3d(100%,0,0));
+}

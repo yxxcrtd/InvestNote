@@ -1,0 +1,101 @@
+$head_bg:#f5f5f5;  
+@import "public";
+section{
+    min-height: 100%;
+    background: $head_bg;
+}
+@mixin borderStyle($value){
+    @if $value==1{
+        border-top:1px solid #e2e2e2;
+    }
+    border-bottom:1px solid #e2e2e2; 
+}
+@mixin css3($type:transform,$value:translateY(-50%)){ 
+    @each $css3 in 0,-webkit-,-moz-,-ms-{
+        @if $css3==0{ 
+            #{$type}:$value;  
+        }@else{  
+            #{$css3}#{$type}:$value;   
+        }
+    } 
+}
+.flex{ 
+    display:-moz-box; 
+    display:-webkit-box;   
+    display:box;
+    display: -ms-flex; 
+    display: -webkit-flex;
+    display: flex;
+    @include css3(box-align,center); 
+}
+.clearborderT{
+    border-top:none!important;  
+}
+.list{
+    @mixin icon($index){
+        @if $index==1{
+            height:28rem/$default-fontSize;
+            width:36rem/$default-fontSize;
+        }
+        @if $index==2{
+            height:31rem/$default-fontSize;
+            width:32rem/$default-fontSize;
+        }
+        @if $index==3{
+            height:32rem/$default-fontSize;
+            width:32rem/$default-fontSize;
+        }
+        @if $index==4{
+            height:28rem/$default-fontSize;
+            width:22rem/$default-fontSize;
+            margin-right:24rem/$default-fontSize;
+            margin-left:20rem/$default-fontSize;
+        }
+    }
+    padding-left:24rem/$default-fontSize;
+    @include borderStyle(1);
+    background: #fff;
+    font-size:28rem/$default-fontSize;
+    color:#282828;
+    >a{
+        @extend .flex;
+        @include css3(align-items,center);
+        height: 87rem/$default-fontSize;
+        @include borderStyle(0);
+        width: 100%;
+        box-sizing: border-box;
+        &{
+            color:#282828;
+        }
+    }
+    .item-left{
+         @include css3(flex,1);
+         @include css3(box-flex,1);
+    }
+    >a:first-child{
+        border-top:none;
+    }
+    >a:last-child{
+        border-bottom: none;
+    }
+    .item-right{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+    }
+    @for $i from 1 to 5{
+        .icon#{$i}{
+            @include icon($i);
+            @if $i!=4{
+                margin-right:24rem/$default-fontSize;
+            }
+            background:url(../img/mynote/icon#{$i}.png) 0 0 no-repeat;
+            background-size:100% 100%;
+            display:inline-block;
+            vertical-align: middle;
+        }
+        .icon#{$i}+span{
+            vertical-align: middle;
+        }
+    } 
+}

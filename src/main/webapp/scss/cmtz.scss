@@ -1,0 +1,17 @@
+@import "public";
+.header_cont{
+    padding-bottom:1px;
+}
+.page_cont{
+    text-align: center;
+    margin-top: 100rem/$default-fontSize;
+    >img{
+        $whval:450rem/$default-fontSize; 
+        width:$whval; 
+        height:$whval; 
+    } 
+}
+.tipInfo{
+    font-size:28rem/$default-fontSize;
+    margin:20rem/$default-fontSize 0; 
+}

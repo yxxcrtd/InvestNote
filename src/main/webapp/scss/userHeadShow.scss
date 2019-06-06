@@ -1,0 +1,33 @@
+@import "public";
+$bg_color:1px solid #DCDCDC;
+body{
+    background-color:$body_bg;
+}
+dl{
+    @extend .clearMGT;
+}
+dt{
+    font-size:22rem/$default-fontSize;
+    color:#969696;
+    padding-left:24rem/$default-fontSize;
+    line-height:56rem/$default-fontSize ;
+    border-top:$bg_color;
+    border-bottom: $bg_color;
+    margin-top:20rem/$default-fontSize;
+}
+.user-list{
+    padding:20rem/$default-fontSize 15rem/$default-fontSize;
+    border-bottom: $bg_color;
+    background:#fff;
+}
+.btnable{
+    padding:24rem/$default-fontSize;
+    >.btn{
+        width:100%; 
+        border:1px solid #2e54a5;
+        color:#2e54a5!important;
+        background-color:rgba(0,0,0,0);
+        font-size:28rem/$default-fontSize;
+        @include css3(border-radius,6rem/$default-fontSize);
+    }
+}

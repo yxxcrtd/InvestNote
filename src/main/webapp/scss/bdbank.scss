@@ -1,0 +1,72 @@
+@import "public";
+
+//bank info
+body{
+    background: #f5f5f5; 
+}
+.bankInfo{ 
+     @include css3(border-radius,7px 7px 0 0);
+      margin:24rem/$default-fontSize 16rem/$default-fontSize 38rem/$default-fontSize 16rem/$default-fontSize;
+      background: -webkit-linear-gradient(left,#ff7373, #ff7095); 
+      background: -o-linear-gradient(left,#ff7373, #ff7095); 
+      background: -moz-linear-gradient(left,#ff7373, #ff7095); 
+      background: linear-gradient(left,#ff7373, #ff7095); 
+      position: relative; 
+      padding:17rem/$default-fontSize 0 31rem/$default-fontSize 24rem/$default-fontSize;
+}
+.bankImg{//img 
+    background-color:#fff;   
+    float:left; 
+    padding:10rem/$default-fontSize; 
+    @include css3(border-radius,50%);   
+    height:54rem/$default-fontSize;
+    width: 54rem/$default-fontSize;   
+    >img{  
+        height:100%;  
+        width:100%;  
+        @include css3(border-radius,50%);  
+    }
+} 
+.bankNum{//bank detail info
+    font-size:30rem/$default-fontSize;
+    color:#fffefe;
+    margin-left:113rem/$default-fontSize; 
+    >p:nth-child(2){
+        font-size:22rem/$default-fontSize;
+        padding:14rem/$default-fontSize 0 49rem/$default-fontSize;
+    }
+}
+//hr
+@mixin hr(){
+    position:absolute;
+    width:8rem/$default-fontSize;
+    height:1px;
+    bottom:-1px;
+    background-color:#a19b9b;
+}
+.leftHR{
+    @include hr();
+    left:-9px;
+}
+.rightHR{
+    @include hr();
+    right:-9px;
+}
+.addBank{
+    font-size:28rem/$default-fontSize;
+    color:#282828;
+    height:87rem/$default-fontSize;
+    line-height: 87rem/$default-fontSize;
+    border-top:1px solid #e2e2e2;
+  border-bottom:1px solid #e2e2e2;
+  background: #fff;
+    >span{
+        display:inline-block;
+        width:26rem/$default-fontSize;
+        height:26rem/$default-fontSize;
+        background:url(../img/add.png) 0 0 no-repeat;
+        background-size: cover;
+        vertical-align: -3px;
+        margin:0 24rem/$default-fontSize;
+    }
+}

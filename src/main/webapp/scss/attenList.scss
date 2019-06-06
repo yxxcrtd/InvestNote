@@ -1,0 +1,109 @@
+@import "public";
+
+
+
+
+
+.fr{
+    float:right;
+}
+.textRight{
+    text-align: right;
+}
+.textLeft{
+    text-align: left;
+}
+.textCenter{
+    text-align: center;
+}
+.dn{
+    display:none; 
+}
+.attenList{
+    padding-left: 24rem/$default-fontSize;
+    background-color:#fff;
+    li:last-child{
+        border-bottom:none;
+    }
+}
+.atten_item{
+    border-bottom:1px solid #dcdcdc;
+    padding:30rem/$default-fontSize 24rem/$default-fontSize 36rem/$default-fontSize 0;
+    >img{
+       width:72rem/$default-fontSize;
+       height:72rem/$default-fontSize;
+       @include css3(border-radius,8px);
+       float:left;
+    }
+}
+.item_head{
+    margin-left:92rem/$default-fontSize;
+}
+.itemHeadCont{
+    margin-top:10rem/$default-fontSize;
+    color:#282828;
+    float:left;
+    >p{
+        margin-bottom:10rem/$default-fontSize;
+        font-size:28rem/$default-fontSize;
+        line-height: 28rem/$default-fontSize;
+    }
+    >span{
+        font-size:20rem/$default-fontSize;
+        line-height: 20rem/$default-fontSize;
+        margin-top:10rem/$default-fontSize;
+        color:#969696;
+        &:last-child{
+            margin-left:14rem/$default-fontSize; 
+        }
+    }
+}
+.itemHead_right{
+    font-size:24rem/$default-fontSize;
+    color:#ee6868;
+    float:right;
+}
+.item_detail{
+    line-height: 42rem/$default-fontSize;
+    font-size: 28rem/$default-fontSize;
+    color:#282828;
+    margin-top:23rem/$default-fontSize;
+}
+.item_detail1{
+    @extend .item_detail;
+    padding:20rem/$default-fontSize 15rem/$default-fontSize 22rem/$default-fontSize;
+    background-color:#f5f5f5;
+}
+.detail_head{
+    margin-bottom:11rem/$default-fontSize;
+    line-height:24rem/$default-fontSize;
+    font-weight: normal;
+    span:first-child{
+        color:#ee6c6c;
+        font-size:24rem/$default-fontSize;
+    }
+    span:nth-child(2),span:nth-child(3){
+        font-size:20rem/$default-fontSize;
+        color:#969696; 
+    }
+}
+.priceList{
+    margin-top:22rem/$default-fontSize;
+    >li{
+         float:left;
+         font-size:20rem/$default-fontSize;
+         width:33.33%;
+         color:#A7A7A7;
+         line-height: 20rem/$default-fontSize;
+         @include css3(box-sizing,border-box);
+         &:first-child{
+             border-right:1px solid #979797;
+         }
+         &:last-child{
+             border-left:1px solid #979797;
+         }
+    }
+}
+
+
+

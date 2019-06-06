@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+    
+    <context:property-placeholder location="classpath:config.properties" />
+
+	<context:component-scan base-package="com.caimao.weixin.note.*" annotation-config="true" />
+	
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close" 
+		p:url="${jdbc.url}" 
+		p:username="${jdbc.username}" 
+		p:password="${jdbc.password}" 
+		p:filters="stat" 
+		p:maxActive="20" 
+		p:initialSize="3" 
+		p:maxWait="60000" 
+		p:minIdle="1" 
+		p:timeBetweenEvictionRunsMillis="3000" 
+		p:minEvictableIdleTimeMillis="300000" 
+		p:validationQuery="SELECT 'x'" 
+		p:testWhileIdle="true" 
+		p:testOnBorrow="false" 
+		p:testOnReturn="false" 
+		p:poolPreparedStatements="true" 
+		p:maxPoolPreparedStatementPerConnectionSize="20" />
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource" />
+
+	<bean id="redisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="200" />
+		<property name="maxTotal" value="1024" />
+		<property name="maxWaitMillis" value="1000" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+	</bean>
+	<bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+		p:hostName="${redis.host}"
+		p:port="${redis.port}"
+		p:password="${redis.pass}"
+		p:poolConfig-ref="redisPoolConfig" />
+	<bean id="redisTemplate" name="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+		<property name="connectionFactory" ref="redisConnectionFactory" />
+	</bean>
+		
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource" />
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="serviceMethod" expression=" execution(* com.caimao.weixin.note.service.impl..*(..))" />
+		<aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice" />
+	</aop:config>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="find*" read-only="true"/>
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+</beans>

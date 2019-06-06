@@ -1,0 +1,6 @@
+function FindProxyForURL(url, host) {
+    if (url.indexOf("gupiao.caimao.com") > 0) {
+        return "PROXY 192.168.137.1:80";
+    }
+    return "direct";
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-4.2.xsd">
+
+	<context:component-scan base-package="com.caimao.weixin.note.*">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+
+	<task:annotation-driven />
+
+	<mvc:resources mapping="/weixin/note/**" location="/" />
+	<mvc:resources mapping="/weixin/note/css/**" location="/css/" />
+	<mvc:resources mapping="/weixin/note/js/**" location="/js/" />
+	<mvc:resources mapping="/weixin/note/img/**" location="/img/" />
+	<mvc:resources mapping="/weixin/note/scss/**" location="/scss/" />
+	<mvc:resources mapping="/weixin/note/font/**" location="/font/" />
+	<mvc:resources mapping="/weixin/note/admin/css/**" location="/admin/css/" />
+	<mvc:resources mapping="/weixin/note/admin/fonts/**" location="/admin/fonts/" />
+	<mvc:resources mapping="/weixin/note/admin/img/**" location="/admin/img/" />
+	<mvc:resources mapping="/weixin/note/admin/js/**" location="/admin/js/" />
+
+
+	<context:property-placeholder location="classpath:config.properties" />
+	
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter" p:supportedMediaTypes="text/plain;charset=UTF-8" />
+
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper">
+					<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+						<property name="dateFormat">
+							<bean class="java.text.SimpleDateFormat">
+								<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
+							</bean>
+						</property>
+					</bean>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<bean id="freemarkerConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:freemarker.properties" />
+	</bean>
+
+	<bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer" 
+		p:templateLoaderPath="/WEB-INF/ftl" 
+		p:defaultEncoding="UTF-8">
+		<property name="freemarkerSettings" ref="freemarkerConfiguration" />
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xml_escape" value-ref="fmXmlEscape" />
+			</map>
+		</property>
+	</bean>
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
+	
+	<bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="2" />
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver" 
+		p:cache="true"
+		p:order="1" 
+		p:prefix="" 
+		p:suffix=".ftl" 
+		p:contentType="text/html; charset=UTF-8" 
+		p:requestContextAttribute="request" />
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="UTF-8" 
+		p:maxUploadSize="10485760" 
+		p:maxInMemorySize="40960" />
+
+	<!--异常处理-->
+	<bean class="com.caimao.weixin.note.util.execption.SimpleMappingException">
+		<!-- 定义默认的异常处理页面，当该异常类型的注册时使用 -->
+		<property name="defaultErrorView" value="error/error" />
+		<!-- 定义异常处理页面用来获取异常信息的变量名，默认名为exception -->
+		<property name="exceptionAttribute" value="ex" />
+		<!-- 定义需要特殊处理的异常，用类名或完全路径名作为key，异常也页名作为值 -->
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.caimao.weixin.note.util.execption.BusinessException">error/error-business</prop>
+				<!-- 这里还可以继续扩展对不同异常类型的处理 -->
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="userListExcel" class="com.caimao.weixin.note.util.UserExcelView" />
+
+</beans>

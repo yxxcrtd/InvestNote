@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+	    <link rel="stylesheet" href="css/mytx.css" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	    <script src="js/flexible.js"></script>
+	    <script type="text/javascript" src="js/zepto.min.js" ></script>
+	    <script type="text/javascript" src="js/fastclick.js" ></script>
+	    <title>投资笔记</title>
+	</head>
+	<body>      
+		<span class="mgup"></span>
+	<!--	银行详细信息 start-->
+			<!--<div class="bankInfo clearfix">
+				<div class="bankImg">
+					<img src="img/bankimg.png" alt="银行信息"/>
+				</div>
+				<div class="bankNum">
+					<p>招商银行</p>
+					<p>储蓄卡</p>
+					<p>6225************1234</p>
+				</div>
+				<hr class="leftHR"/><hr class="rightHR"/>
+			</div>-->
+			<!--end-->
+			
+			<div class="card_infoShow clearfix">
+				<img src="img/bank_logo/7.jpg" alt="银行信息"/>
+				<div class="bank_cont">
+					<p>招商银行</p>
+					<p>6226 **** **** 8555（储蓄卡）</p>
+				</div>
+			</div>
+			<!--文本框start-->
+			<div class="outMoney">
+				<label>转出金额</label>
+				<div class="txt">
+					<input type="text" placeholder="可转出:1000.00" id="money" target="btnOut"/>
+					<i class="clearCont"></i>
+				</div>
+			</div>
+			<!--end-->
+			<p class="tip">手续费0.00</p>
+			<!--文本框start-->
+			<!--<div class="outMoney mt20">
+				<label>验证码</label>
+				<div class="txt">
+					<input type="text" placeholder="请输入验证码" id="authCode"/>
+					<span class="authCode" id="getAuthCode" time="10">获取验证码</span>
+				</div>
+				
+			</div>-->
+			<div class="txt_list">
+				<div class="input_txt input_auth clearfix">
+					<label>+86<i></i></label>
+					<input type="text" placeholder="请输入手机号码"/>
+				</div>
+				<div class="input_txt input_authVal clearfix">
+					<input type="text"/>
+					<label id="getAuthCode"  time="10"><i></i><span>获取验证码</span></label>
+				</div>
+			</div>
+			<!--end-->
+			<p class="btnDis mt24" id="btnOut"><a class="btn btn1" data-btn="1">提交</a></p>
+			<p class="rule_tip">每单首日提现免手续费</p>
+			<!--请输入密码-->
+			<div class="mask">
+				<div class="inputPass">
+					<p>提现<em>¥1000.00</em></p>
+					<div class="outMoneyPass"> 
+						<label>输入密码</label>
+						<div class="txt">
+							<input type="password" placeholder="输入付款时的密码" target="btnTrue" id="pass"/>
+						</div>
+					</div>
+					<p class="btnDis" id="btnTrue"><a class="btn btn1"  data-btn="2">确认</a></p>
+				</div>
+			</div>
+				<div id="footer">
+			<div class="footer_fg">&nbsp;<p>笔记仅供参考</p><span class="left"></span><span  class="right"></span></div>
+			<a class="footer_authInfo"  href="cmtz.html">由&nbsp;<span>财猫投资笔记</span>&nbsp;提供技术支持</a>
+		</div>
+		<nav class="footer_Info">
+			<a href="attenList.html" class="clickHove"><i class="index"></i><span>首页</span></a>
+			<a href="noteRecord.html" class="clickHove"><i class="note"></i><span>笔记</span></a>
+			<a href="createNote.html" class="clickHove"><i class="writeNote"></i><span>写笔记</span></a>
+			<a href="mynote.html" class="clickHove"><i class="my"></i><span>我的</span></a>
+		</nav>
+			<!--提示框-->
+			<div class="dialog_tip_cont">您的号码有误，请重新输入</div>
+			<script src="js/public.js"></script>
+			<script src="js/mytx.js"></script>
+		
+	</body>
+</html>

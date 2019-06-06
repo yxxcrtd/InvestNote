@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/noteRecord.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<script src="js/flexible.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/fastclick.js" ></script>
+		<title>投资笔记</title>
+	</head>
+
+	<body>
+		<div class="pageCont">
+		<div class="attenList_head" id="switch">
+			<span class="on"  target-id="myCreate" hide-id="myRead">我的创作</span>
+			<span target-id="myRead" hide-id="myCreate">我的阅读</span>
+		</div>
+		<div class="tab_cont">
+			<ul class="listHead">
+				<li>名称</li>
+				<li>目标涨幅</li>
+				<!--<li>阅读量</li>-->
+				<li>作者</li>
+			</ul>
+			<!--我的创作-->
+			<div id="myCreate">
+				<div class="list_suce">
+					<div class="ml30">
+						<ul>
+							<li>卢宁高速<br/><em class="colorf15438 Fsize20">进行中</em></li>
+							<li><label class="increase">3日&nbsp;&nbsp;10%<br/><span class="colorf15438 Fsize20">4.20起</span></label><i class="icon2"></i></li>
+							<!--<li>120</li>-->
+							<li>李建泽</li>
+						</ul>
+					</div>
+					<!--end--> 
+					<!--未达目标 start-->
+					<div class="ml30">
+						<ul>
+							<li>卢宁高速<br/><em class="colorf15438 Fsize20">未开盘</em></li>
+							<li><label class="increase">3日&nbsp;&nbsp;10%<br/><span class="colorf15438 Fsize20">4.20起</span></label><i class="icon2"></i></li>
+							<!--<li>120</li>-->
+							<li>李建泽</li>
+						</ul>
+					</div>
+					<!--end-->
+					<!--失效 start-->
+					<div class="ml30">
+						<ul>
+							<li>卢宁高速<br/><em class="colorb4b4b4 Fsize20">已结束</em></li>
+							<li><label class="increase">3日&nbsp;&nbsp;10%<br/><span class="colorb4b4b4 Fsize20">4.20起</span></label><i class="icon2"></i></li>
+							<!--<li>120</li>-->
+							<li>李建泽</li>
+						</ul>
+					</div>
+					<!--end-->
+				</div>
+			<!--<div class="loading">
+				<a href="javascript:void(0);"><img src="img/loading.gif"/><span>正在加载</span></a>
+			</div>-->
+			</div>
+			<!--我的阅读-->
+			<div id="myRead" class="dn">
+				<div class="list_suce">
+					<!--已达目标 start-->
+					<div class="ml30">
+						<ul>
+							<li>卢宁高速<br/><em class="colorf15438 Fsize20">进行中</em></li>
+							<li><label class="increase">3日&nbsp;&nbsp;10%<br/><span class="colorf15438 Fsize20">4.20起</span></label><i class="icon2"></i></li>
+							<!--<li>120</li>-->
+							<li>李建泽</li>
+						</ul>
+					</div>
+					<!--end--> 
+					<!--未达目标 start-->
+					<div class="ml30">
+						<ul>
+							<li>卢宁高速<br/><em class="colorf15438 Fsize20">未开盘</em></li>
+							<li><label class="increase">3日&nbsp;&nbsp;10%<br/><span class="colorf15438 Fsize20">4.20起</span></label><i class="icon2"></i></li>
+							<!--<li>120</li>-->
+							<li>李建泽</li>
+						</ul>
+					</div>
+					<!--end-->
+					<!--失效 start-->
+					<div class="ml30">
+						<ul>
+							<li>卢宁高速<br/><em class="colorb4b4b4 Fsize20">已结束</em></li>
+							<li><label class="increase">3日&nbsp;&nbsp;10%<br/><span class="colorb4b4b4 Fsize20">4.20起</span></label><i class="icon2"></i></li>
+							<!--<li>120</li>-->
+							<li>李建泽</li>
+						</ul>
+					</div>
+					<!--end-->
+					<div class="ml30">
+						<ul>
+							<li>卢宁高速<br/><em class="colorb4b4b4 Fsize20">已结束</em></li>
+							<li><label class="increase">3日&nbsp;&nbsp;10%<br/><span class="colorb4b4b4 Fsize20">4.20起</span></label><i class="icon2"></i></li>
+							<li>120</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="loading">
+				<a href="javascript:void(0);"><img src="img/loading.gif"/><span>正在加载</span></a>
+			</div>
+			
+			
+			
+			
+		</div>
+		<!--<div id="footer">
+			<div class="footer_fg">&nbsp;<p>笔记仅供参考</p><span class="left"></span><span  class="right"></span></div>
+			<a class="footer_authInfo"  href="cmtz.html">由&nbsp;<span>财猫投资笔记</span>&nbsp;提供技术支持</a>
+		</div>-->
+		</div>
+		<nav class="footer_Info">
+			<a href="attenList.html" class="clickHove"><i class="index"></i><span>首页</span></a>
+			<a href="noteRecord.html" class="clickHove"><i class="note"></i><span>笔记</span></a>
+			<a href="createNote.html" class="clickHove"><i class="writeNote"></i><span>写笔记</span></a>
+			<a href="mynote.html" class="clickHove"><i class="my"></i><span>我的</span></a>
+		</nav>
+		<script src="js/public.js"></script>
+		<script src="js/noteRecord.js"></script>
+	</body>
+
+</html>

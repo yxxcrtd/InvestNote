@@ -1,0 +1,41 @@
+@import "public";
+$color:#2e54a5;
+.header_cont{
+    padding-bottom:0;
+}
+.page-content {
+    text-align:center;  
+    padding:186rem/$default-fontSize 0 0;
+    img{
+        width:255rem/$default-fontSize;   
+        height:129rem/$default-fontSize;
+        margin-left:56rem/$default-fontSize;   
+    } 
+    h3{  
+        font-size: 30rem/$default-fontSize;
+        line-height: 60rem/$default-fontSize;  
+        font-weight: normal;  
+    }
+    >a{
+        font-size:24rem/$default-fontSize;  
+        color:$color;
+    }
+    p:nth-child(3){  
+        line-height: 46rem/$default-fontSize;
+        font-size:24rem/$default-fontSize;
+        margin-top:6rem/$default-fontSize;   
+        em{
+            color:#2e54a5;  
+        } 
+    }
+     p:nth-child(4){    
+        text-align: center;
+        margin:104rem/$default-fontSize 0 10rem/$default-fontSize;
+    }
+    p:last-child{
+        font-size:22rem/$default-fontSize;
+        color:#b4b4b4;
+    }
+  
+}
+

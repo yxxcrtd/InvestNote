@@ -1,0 +1,64 @@
+@import "public";
+//css3 compatibility
+@mixin css3($type:transform,$value:translateY(-50%)){
+    @each $css3 in 0,-webkit-,-moz-,-ms-{
+        @if $css3==0{
+            #{$type}:$value;
+        }@else{
+            #{$css3}#{$type}:$value; 
+        }
+    }
+}
+.noteSuccess{ 
+    overflow:hidden;  
+    padding:0 63rem/$default-fontSize;  
+    color:#1c0538;
+    >p:nth-child(1){  
+        text-align: center; 
+    font-size:28rem/$default-fontSize;
+    margin:175rem/$default-fontSize 0 17rem/$default-fontSize;  
+    }
+    >p:nth-child(2){   
+        text-align: center;
+        font-size:22rem/$default-fontSize;  
+        margin-bottom:100rem/$default-fontSize;   
+        color:#372a4c; 
+    }
+}
+.getInfo{ 
+    padding:38rem/$default-fontSize 15rem/$default-fontSize 42rem/$default-fontSize 15rem/$default-fontSize;
+    border:1px solid #f15438;
+    @include css3(border-radius,5px);
+    img{
+        float:left;
+        width:98rem/$default-fontSize;
+        height:98rem/$default-fontSize;
+        border:1px solid #dcdcdc;
+    }
+    div{
+        margin-top:-4rem/$default-fontSize;
+        margin-left:119rem/$default-fontSize;
+        color:#282828;
+        line-height: 36rem/$default-fontSize;
+        font-size:28rem/$default-fontSize;
+    }
+}
+
+//share tip
+.share_tip{
+    display: none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    >i{
+       display: inline-block;
+       margin:3rem/$default-fontSize 0 0 50.625%;
+       height:169rem/$default-fontSize;
+       width:284rem/$default-fontSize;
+       background:url(../img/shareArrow.png) 0 0 no-repeat; 
+       background-size:cover;
+    }
+}

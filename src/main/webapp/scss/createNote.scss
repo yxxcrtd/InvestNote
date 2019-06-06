@@ -1,0 +1,223 @@
+@import "public";
+$default-fontSize:64;  
+input[type="radio"]{
+    width:26rem/$default-fontSize;
+    height:26rem/$default-fontSize;
+    position: relative;
+    top:1px;
+}
+.ml30{
+    margin-left: 30rem/$default-fontSize;
+}
+.mt20{
+    margin-top: 20rem/$default-fontSize;
+}
+.vam{
+    vertical-align: middle;
+}
+@mixin css3($type:transform,$value:translateY(-50%)){
+    @each $css3 in 0,-webkit-,-moz-,-ms-{ 
+        @if $css3==0{
+            #{$type}:$value;
+        }@else{
+            #{$css3}#{$type}:$value; 
+        }
+    }
+} 
+.overf{overflow: hidden;}
+.mg24{ 
+    $mgVal:24rem/$default-fontSize;  
+    margin:0 $mgVal;   
+}
+.create{ 
+    $value:24rem/$default-fontSize;   
+    padding:$value $value 0; 
+} 
+$left:24rem/$default-fontSize;    
+.outMoney{ 
+    $pdleft:80rem/$default-fontSize; 
+    $bg:#f5f5f5;
+    $height:64rem/$default-fontSize;
+    background-color: #fff; 
+    .text_info{
+       position:relative; 
+    }
+    label{
+       line-height: $height; 
+       font-size:28rem/$default-fontSize;
+       color:#282828;
+    }
+    .input{
+        width:100%;
+        border:none; 
+        height:$height;
+        background: $bg;
+        font-size:28rem/$default-fontSize;
+        padding-left:10px;
+        line-height:normal;
+        @include css3(border-radius,3px);
+        &:focus{
+            outline: none;
+        }
+    }
+    .txt{
+        position:absolute;
+        top:50%;
+        @include css3(transform,translateY(-50%));
+        left:$pdleft;
+        right:0;
+        >input[type="text"],>input[type="number"]{
+            @extend .input;
+            box-sizing: border-box; 
+        }
+    }
+    $mb:30rem/$default-fontSize;
+    .textarea_info{
+        $height:238rem/$default-fontSize;
+        height:$height;
+        textarea{
+            padding:10rem/$default-fontSize 0 0  10px;
+            @extend .input;
+            line-height: normal;
+            height:200rem/$default-fontSize;
+            box-sizing: border-box;
+        }
+    }
+    .color2190e7{
+        color:#2190e7;
+    }
+    .colorf15438{
+        color:#f15438;
+    }
+     .colorb0b0b0{
+        color:#b0b0b0; 
+    }
+    .tip{
+        padding-left:$pdleft;
+        font-size:22rem/$default-fontSize;
+        margin:10rem/$default-fontSize 0 30rem/$default-fontSize;
+    }
+    .dialog_tip{
+        color: #007AFF;;
+        font-size:28rem/$default-fontSize;
+    }
+    .readMoney{
+        line-height: 30rem/$default-fontSize;
+    }
+    //涨幅信息
+    $pd:5rem/$default-fontSize;
+    $selHeight:60rem/$default-fontSize;
+    .upbtn{
+        display:inline-block;
+        width:40%;
+        box-sizing: border-box;
+        float:left;
+        >input{
+            width:63%;
+            height:$selHeight+2rem/$default-fontSize;
+            @extend .input;
+            white-space:nowrap;
+            margin-left:5px;
+        }
+    }
+    .fSize{
+        font-size:28rem/$default-fontSize;
+    }
+    .upbtn:first-child{
+        padding-right:$pd;
+    }
+    .upbtn:last-child{
+        padding-left:$pd;
+        width:60%;
+    }
+    .upInfo{
+        height:$selHeight;
+        text-align: center;
+        line-height: $selHeight;
+        display:inline-block; 
+        width:100%;
+        font-size:28rem/$default-fontSize;
+        color:#282828;
+        background-color:#f5f5f5;
+        @include css3(border-radius,3px);
+        border:1px solid #dcdcdc;
+    }
+   
+
+}
+.arrow{
+    background:url(../img/arrow.png) 0 0 no-repeat;
+    display: inline-block;
+    width:16rem/$default-fontSize;
+    height:8rem/$default-fontSize;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-left:7rem/$default-fontSize;
+    -webkit-transition: -webkit-transform .5s ease-in;
+    -moz-transition: -moz-transform .5s ease-in;
+    transition: transform .5s ease-in;
+}
+.rule_check{
+    float:right;
+    padding-right:50rem/$default-fontSize;
+    font-size:24rem/$default-fontSize;
+    padding-top:20rem/$default-fontSize;
+    margin-bottom:10rem/$default-fontSize;
+}
+$btnColor:#f15438;
+.btnable{
+    text-align: center;
+    padding:10rem/$default-fontSize $left 0;
+    .btn1{
+        display: block;
+        width:auto;
+        background-color:$btnColor;
+    }
+}
+ //下拉效果
+    .sel_mask{
+        $height:62rem/$default-fontSize;
+        position:fixed;
+        display:none;
+        height:100%;
+        width:100%;
+        top:0;
+        z-index:100;
+        background-color:rgba(127,127,127,.5);
+        .sel{
+            position:absolute;
+            z-index:10; 
+        }
+        .title{
+            border-bottom:1px solid #dcdcdc;
+            font-size:28rem/$default-fontSize;
+            text-align:center;
+            line-height: $height;
+            height: $height;
+            background-color:#f5f5f5;
+        }
+        .daySel,.upSel{
+            background-color:#f5f5f5;
+            padding:0 9px;
+            display: none;
+            @include css3(border-radius,3px);
+            height:300rem/$default-fontSize;
+            overflow-y:scroll;
+            >li{
+               line-height: $height;
+               height: $height;
+               text-align: center;
+               font-size:24rem/$default-fontSize;
+               border-bottom:1px solid #dcdcdc;
+            }
+             >li:last-child{
+                 border-bottom:none;
+             }
+        }
+        .on{
+            border:1px solid #dcdcdc;
+        }
+        .on ul{
+            display:block;
+        }
+    }

@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "microsoft yahei","MicrosoftYaHeiLight";
+  -webkit-text-size-adjust: none; }
+
+.clearfix:after {
+  clear: both;
+  height: 0;
+  visibility: hidden;
+  display: block;
+  content: ""; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #e83b22;
+  background: url(../img/pc/K.png) center 10% no-repeat fixed #e83b22; }
+
+.page-content {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(255, 218, 66, 0.2), rgba(255, 218, 66, 0.1));
+  -webkit-background-image: radial-gradient(circle, rgba(255, 218, 66, 0.2), rgba(255, 218, 66, 0.1));
+  -moz-background-image: radial-gradient(circle, rgba(255, 218, 66, 0.2), rgba(255, 218, 66, 0.1));
+  -ms-background-image: radial-gradient(circle, rgba(255, 218, 66, 0.2), rgba(255, 218, 66, 0.1)); }
+
+.head {
+  position: relative; }
+
+.mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  filter: alpha(opacity=10);
+  -moz-opacity: 0.1;
+  opacity: 0.1;
+  background-color: #fff; }
+
+.head_cont {
+  position: absolute;
+  z-index: 5;
+  color: #fff;
+  padding: 26px 0 15px;
+  width: 100%; }
+  .head_cont img {
+    width: 35px;
+    height: 38px;
+    vertical-align: middle;
+    margin-left: 23.95833%;
+    float: left; }
+  .head_cont .head_title {
+    margin: 0 20px 0 15px;
+    padding-right: 20px;
+    border-right: 1px solid #fff;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 28px;
+    float: left; }
+  .head_cont .head_Detail {
+    font-size: 14px;
+    vertical-align: middle;
+    display: inline-block;
+    float: left; }
+  .head_cont .tel {
+    margin-left: 515px; }
+
+.content {
+  width: 300px;
+  padding: 0 15px;
+  background-color: #f3e0db;
+  border-radius: 33px;
+  -webkit-border-radius: 33px;
+  -moz-border-radius: 33px;
+  -ms-border-radius: 33px;
+  border: 1px solid #fcf3f0;
+  position: absolute;
+  top: 20%;
+  left: 35%; }
+
+.phone {
+  background-color: #f3e0db;
+  text-align: center;
+  padding: 44px 0 13px;
+  border-radius: 33px;
+  -webkit-border-radius: 33px;
+  -moz-border-radius: 33px;
+  -ms-border-radius: 33px;
+  behavior: url(ie-css3.htc); }
+  .phone > i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #969696;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    vertical-align: middle; }
+  .phone > span {
+    display: inline-block;
+    width: 60px;
+    height: 4px;
+    background-color: #969696;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    vertical-align: middle;
+    margin-left: 3px; }
+
+.phone_footer {
+  text-align: center;
+  padding: 13px 0; }
+  .phone_footer > span {
+    display: inline-block;
+    height: 39px;
+    width: 39px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    background-color: #fff; }
+
+.content_phone {
+  background-color: #fff;
+  padding-top: 37px; }
+
+.content_head {
+  padding: 14px 16px 19px 9px;
+  background-color: #ea4a26;
+  font-size: 16px; }
+  .content_head > img {
+    width: 42px;
+    height: 42px;
+    float: left;
+    padding-right: 10px; }
+
+.historyDetail {
+  color: #fff; }
+  .historyDetail dt {
+    line-height: 26px;
+    height: 26px; }
+  .historyDetail dd {
+    line-height: 12px; }
+    .historyDetail dd > span {
+      font-size: 12px;
+      display: table-cell;
+      width: 25%; }
+
+.mgl {
+  margin-left: 10px; }
+
+.detail {
+  padding: 42px 32px 39px; }
+  .detail > span {
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    width: 33.33%; }
+    .detail > span > em {
+      color: #e94023;
+      font-size: 16px;
+      font-style: normal; }
+
+.ercode {
+  text-align: center;
+  padding-bottom: 86px;
+  font-size: 20px;
+  color: #979797;
+  line-height: 20px;
+  letter-spacing: 9px; }
+  .ercode > img {
+    width: 114px;
+    height: 114px;
+    margin-bottom: 8px; }
+
+.pageCont_title {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  white-space: nowrap;
+  color: #fff;
+  top: 90px;
+  margin-left: 29px;
+  font-size: 52px;
+  font-weight: bold;
+  line-height: 66px; }
+  .pageCont_title > p {
+    font-size: 30px;
+    font-weight: normal; }
+
+/*# sourceMappingURL=pcerCode.css.map */

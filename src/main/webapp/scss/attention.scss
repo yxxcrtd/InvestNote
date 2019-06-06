@@ -1,0 +1,22 @@
+@import "public";
+$otherColor:#fff;
+$border:1px solid #dcdcdc;
+body{
+    background: $head_bg;
+    overflow:hidden;
+}
+.simple_list{ 
+    font-size:28rem/$default-fontSize;
+    line-height: 28rem/$default-fontSize;
+    color:#282828;
+    padding:40rem/$default-fontSize 24rem/$default-fontSize;
+    background-color:$otherColor;
+    border-top:$border;
+    border-bottom:$border;
+    span:last-child{
+        float:right;
+    }
+}
+
+
+

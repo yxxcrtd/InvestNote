@@ -1,0 +1,255 @@
+@import "public";  
+body{
+    background-color:#fff;
+}
+.head_top{
+    background-color:$head_bg;
+}
+@mixin borderStyle($value){
+    @if $value==1{
+        border-top:1px solid #e2e2e2;
+    }
+    border-bottom:1px solid #e2e2e2; 
+}
+@mixin list(){
+    >li{ 
+         @include css3(flex,1);
+         @include css3(box-flex,1);    
+     
+    }
+    >li:nth-child(2){  
+        text-align: center;    
+    }
+    >li:last-child{
+        text-align: right; 
+    }
+}
+@mixin css3($type:transform,$value:translateY(-50%)){
+    @each $css3 in 0,-webkit-,-moz-,-ms-{  
+        @if $css3==0{
+            #{$type}:$value; 
+        }@else{
+            #{$css3}#{$type}:$value;
+        } 
+    }
+}
+.overf{overflow:hidden;}
+.flex{
+    display:-moz-box;
+    display:-webkit-box;
+    display:box;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    @include css3(box-align,center);
+}
+//list
+$left:24rem/$default-fontSize;
+//.list_head{
+//  padding:0 $left;
+//  background-color:#fff;
+//  li{
+//      float:left;
+//      line-height: 87rem/$default-fontSize;
+//      font-size:28rem/$default-fontSize;
+//      >a{
+//          color:#757575;
+//          display:inline-block;
+//          height:100%;
+//      }
+//  }
+//  li:nth-child(1){
+//      width:41.55%;
+//  }
+//  li:nth-child(2){
+//      width:44.55%;
+//  }
+//  li:nth-child(3){
+//      width:13.9%;
+//      text-align: right;
+//  }
+//  .active{
+//     >a{
+//         color:#f15438;
+//         border-bottom:1px solid #f15438;
+//     } 
+//  }
+//}
+.list{
+    @mixin icon($index){
+        @if $index==4{
+            height:28rem/$default-fontSize;
+            width:22rem/$default-fontSize;
+            margin-right:24rem/$default-fontSize;
+            margin-left:20rem/$default-fontSize;
+        }
+    }
+    padding-left:$left;
+    @include borderStyle(1);
+    background: #fff;
+    font-size:28rem/$default-fontSize;
+    $color:#282828;
+    color:$color;
+    >a{
+        @extend .flex;
+        align-items: center;
+        height: 87rem/$default-fontSize;
+        @include borderStyle(0);
+        width: 100%;
+        box-sizing: border-box;
+        color:$color;
+    }
+    .item-left{
+        @include css3(flex,1);
+        @include css3(box-flex,1);
+    }
+    >a:first-child{
+        border-top:none;
+    }
+    >a:last-child{
+        border-bottom: none;
+    }
+    .item-right{
+        @extend .flex;
+        @include css3(justify-content,center);
+        @include css3(align-items,center);
+    }
+    .icon4{
+        @include icon(4);
+        background:url(../img/mynote/icon4.png) 0 0 no-repeat;
+        background-size:100% 100%;
+        display:inline-block;
+        vertical-align: middle;
+    }
+    .mr24{
+        margin-right:24rem/$default-fontSize;
+        vertical-align: middle;
+    }
+}
+$left:24rem/$default-fontSize;
+.borderB{
+    border-bottom:1px solid #dcdcdc;
+}
+.borderBT{
+    @extend .borderB;
+    border-top:1px solid #dcdcdc;
+}
+.colorcfcfcf{
+    color:#cfcfcf;
+}
+.color1da158{
+    color:#1da158;
+}
+.colorf15438{
+    color:#f15438;
+}
+.list_suce{
+    @mixin icon(){
+        background-size: 100% 100%;
+        $height:95rem/$default-fontSize;
+        height:$height;
+        width: $height;
+        position:absolute;
+        left:(387/640)*100%;
+        top:50%;
+        @include css3(transform,translateY(-50%));
+    }
+    padding-left:$left;
+    @extend .borderBT;
+    background-color:#fff;
+    ul{
+        width: 100%;
+        box-sizing: border-box;
+        padding-right:$left;
+        height: 119rem/$default-fontSize;
+        @extend .flex;
+        @extend .borderB;
+        @include css3(align-items,center);
+        @include list();
+        font-size:28rem/$default-fontSize;
+        color:#282828;
+        position:relative;
+        >li:first-child{
+            line-height: 34rem/$default-fontSize;
+        }
+        >li:last-child{
+            @extend .colorf15438;
+        }
+    }
+    ul:last-child{
+        border-bottom:none; 
+    }
+}
+//btn
+$btnColor:#e6e6e6;
+.btnDis{
+    text-align: center;
+    padding:$left $left;
+    background: #fff;
+    .btn1{
+        display: block;
+        width:auto;
+        color:#282828;
+        background:$btnColor; 
+        &:hover{
+            color:#282828;
+        }
+    }
+}
+.arrow{
+        background:url(../img/arrow.png) 0 0 no-repeat;
+        display: inline-block;
+        height:8rem/$default-fontSize;
+        width:16rem/$default-fontSize;
+        background-size:100% 100%;
+        vertical-align: middle;
+        margin-left:17rem/$default-fontSize;
+    }
+//下拉效果
+    .sel_mask{
+        display:none;
+        $height:62rem/$default-fontSize;
+        position:fixed;
+        height:100%; 
+        width:100%;
+        top:0;
+        background-color:rgba(127,127,127,.5);
+        .sel{ 
+            position:absolute;
+            z-index:10; 
+        }
+        .title{
+            font-size:28rem/$default-fontSize;
+            text-align:center;
+            line-height: $height;
+            height: $height;
+            background-color:#f5f5f5;
+            border-bottom: 1px solid #dcdcdc;
+        }
+        .selItem{
+            background-color:#f5f5f5;
+            padding:0 9px;
+            @include css3(border-radius,3px);
+            height:500rem/$default-fontSize;
+            overflow-y:auto;
+            >li{
+               line-height: $height;
+               height: $height;
+               text-align: center;
+               font-size:24rem/$default-fontSize;
+               border-bottom:1px solid #dcdcdc;
+            }
+             >li:last-child{
+                 border-bottom:none;
+             }
+        }
+        .on{
+            border:1px solid #f15438;
+        }
+        .on ul{
+            display:block;
+        }
+    }
+#footer{
+    background-color:#fff;
+}

@@ -1,0 +1,111 @@
+@import "public";
+$head_bg:#f5f5f5;
+$fontSize22:22rem/$default-fontSize;  
+@mixin size($value:22rem){
+    font-size:$value/$default-fontSize;
+}
+@mixin css3($type:transform,$value:translateY(-50%)){
+    @each $css3 in 0,-webkit-,-moz-,-ms-{
+        @if $css3==0{
+            #{$type}:$value;
+        }@else{
+            #{$css3}#{$type}:$value;    
+        }
+    } 
+} 
+.textalign{ 
+    text-align: center;
+}
+ .mt17{
+    margin-top:17rem/$default-fontSize;      
+ }
+ .mb16{
+     margin-bottom:16rem/$default-fontSize;
+ }
+ .fontSize{
+     font-size:24rem/$default-fontSize;   
+ }  
+section{
+    background-color:#fff; 
+}  
+.page_content{
+    padding:0 24rem/$default-fontSize 0;
+    .thign-Info{ 
+        height:173rem/$default-fontSize;
+        @extend .flex;
+        @include css3(align-items,center);
+        width:100%;
+        >span{
+            @include css3(flex,1);
+            @include css3(box-flex,1);
+            display: block;
+            text-align: center;
+            line-height:34rem/$default-fontSize;
+            font-size:30rem/$default-fontSize;  
+            color:#f15438;
+            >strong{
+                font-size:22rem/$default-fontSize;    
+                color:#979797;
+                font-weight: normal;  
+            }
+            em{
+                color:#475d8b;
+                font-size:28rem/$default-fontSize;
+            }
+        }
+    }
+    .thign-Invest{
+        display:table;
+        width:100%;
+        background:url(../img/contBg.png) 0 0 no-repeat; 
+        background-size:cover; 
+        >p{
+            text-align: center;
+            vertical-align: middle; 
+            display:table-cell;
+            height:134rem/$default-fontSize;   
+        }
+        .thign-InvestIntro{
+            vertical-align: middle;
+            span:first-child{
+                font-size:28rem/$default-fontSize;
+                line-height: 62rem/$default-fontSize; 
+                color:#646464;
+            }
+            span:last-child{
+                @include size();  
+                color:#f15438;
+            }
+        } 
+    }
+    .readNum{
+        margin-top:100rem/$default-fontSize;     
+        text-align: center;
+        @include size();
+        em{
+            color:#f15438;  
+        }
+    }
+    .mone-tip{
+        @include size();
+        color:#f15438;
+        >img{
+            vertical-align: middle;
+            margin-right:5px;
+            position: relative;
+            top:-2px;
+            width:24rem/$default-fontSize;
+            height:24rem/$default-fontSize;
+        }
+    }
+    .mone-tip1{
+        line-height: 58rem/$default-fontSize; 
+        margin-bottom:25px;
+        @include size(); 
+        color:#969696;
+    }
+}
+.transform180deg{
+    @include css3(transform,rotate(180deg));
+}
+

@@ -1,0 +1,18 @@
+@import "public";
+.page_cont{
+    text-align: center;
+    padding:160rem/$default-fontSize 24rem/$default-fontSize 0;
+    >img{
+        width:403rem/$default-fontSize;
+        height:222rem/$default-fontSize;
+    }
+}
+.tip_cont{
+    font-size:28rem/$default-fontSize;
+    margin:60rem/$default-fontSize 0 118rem/$default-fontSize;
+} 
+.btnable{ 
+    .btn{  
+        width:100%;      
+    }   
+}

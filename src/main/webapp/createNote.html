@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<link rel="stylesheet" href="css/createNote.css" />
+		<script src="js/flexible.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/fastclick.js"></script>
+		<title>投资笔记</title>
+	</head>
+
+	<body>
+		<div class="footAdap">
+		<div class="head_top">
+					<div>
+						<a class="createNoteBtn" href="createNote.html"><i></i>写笔记</a><a href="tabPage.html">我的</a>
+					</div>
+		</div>
+		<div class="page_cont">
+			
+			<form class="outMoney">
+				<ul class="mg24">
+					<li class="text_info">
+						<label>股票</label>
+						<div class="txt">
+							<input type="text" placeholder="输入股票代码" id="note_stock_code"/>
+						</div>
+					</li>
+					<li class="tip color2190e7">普邦园林</li>
+					<li class="text_info">
+						<label>目标</label>
+						<div class="txt">
+							<span class="upbtn"><a class="upInfo" index="0"><span class="day">两天</span><i class="arrow"></i></a>
+
+							</span><span class="upbtn fSize">上涨<input type="text" min="3" max="30" datatype="number" id="note_increase" dialog_title="涨幅最小3,最大30" placeholder="3-30"/><span style="float:right;line-height:40px;">%</span></span>
+
+						</div>
+					</li>
+					<li class="tip colorb0b0b0" id="sp"><span class="vam">起算日2016.2.28，截止3.1收盘</span></li>
+					<li class="text_info">
+						<label>标题</label>
+						<div class="txt">
+							<input type="text" placeholder="0-12字，不付费时可见" id="note_title" max="12" min="0"  dialog_title="0-12字，不付费时可见" target="note_remark"/>
+						</div>
+					</li>
+					<li class="text_info textarea_info mt20">
+						<label>逻辑</label>
+						<div class="txt">
+							<textarea rows="3" cols="20" placeholder="5-140字，建议写上止损价" id="note_remark" max="140" min="5" dialog_title="逻辑应为5-140字"></textarea>
+						</div>
+					</li>
+					<!--<li class="text_info">
+						<label>&nbsp;</label>
+						<div class="txt">
+							<input type="radio" id="noMoney" name="note_type" value="0"/><label for="noMoney"  disabledFastClick="1">&nbsp;免费笔记</label>
+							<input type="radio"  id="outMoney" class="ml30"  name="note_type"  value="1" checked="true"/><label  for="outMoney"  disabledFastClick="1">&nbsp;付费查看</label>
+						</div>
+					</li>-->
+					<li class="text_info" target="note_type">
+						<label>标价</label>
+						<div class="txt">
+							<input type="text" placeholder="0-200元，整数金额" id="note_open_money" value="100" min="0" max="200" dataType="number" dialog_title="0-200元，整数金额"/>
+							<script>
+								$("#note_open_money").val("");
+							</script>
+						</div>
+					</li>
+					<li class="tip colorb0b0b0 readMoney"  target="note_type">
+						您同时需准备一等额红包，未达目标时分给读者
+					</li>
+				</ul>
+				<div class="clearfix"> <span class="rule_check color2190e7" id="payBtn">查看规则</span></div>
+				<p class="btnable"><a class="btn btn1" href="javascript:void(0);">发布</a></p>
+				<input type="hidden" id="dayNum" value="3"/>
+				<input type="hidden" id="zf"/>
+			</form>
+
+		</div>
+		<div id="footer">
+			<div class="footer_fg">&nbsp;<p>笔记仅供参考</p><span class="left"></span><span  class="right"></span></div>
+			<a class="footer_authInfo"  href="cmtz.html">由&nbsp;<span>财猫投资笔记</span>&nbsp;提供技术支持</a>
+		</div>
+		</div>
+		<!--下拉start-->
+		<div class="sel_mask">
+			<div class="on sel">
+				<div class="title"><span>2日</span><i class="arrow"></i></div>
+				<ul class="daySel" target=".day" target1="upSel" updateId="sp" targetVal="dayNum">
+					<li index="0" data-val="2">2日</li>
+					<li index="1" data-val="3">3日</li>
+					<li index="2" data-val="4">4日</li>
+					<li index="3" data-val="5">5日</li>
+					<li index="4" data-val="6">6日</li>
+					<li index="5" data-val="7">7日</li>
+					<li index="6" data-val="8">8日</li>
+					<li index="7" data-val="9">9日</li>
+					<li index="8" data-val="10">10日</li>
+					<li index="9" data-val="11">11日</li>
+					<li index="10" data-val="12">12日</li>
+					<li index="11" data-val="13">13日</li>
+					<li index="12" data-val="14">14日</li>
+					<li index="13" data-val="15">15日</li>
+					<li index="14" data-val="16">16日</li>
+					<li index="15" data-val="17">17日</li>
+					<li index="16" data-val="18">18日</li>
+					<li index="17" data-val="19">19日</li>
+					<li index="18" data-val="20">20日</li>
+				</ul>
+			</div>
+			<!--<div class="sel">
+				<div class="title"><span>预期涨幅</span><i class="arrow"></i></div>
+				<ul class="upSel" target=".pro" targetVal="zf">
+					<li index="0" data-val="3">3%</li>
+					<li index="1" data-val="5" selected="true">5%</li>
+					<li index="2" data-val="8">8%</li>
+					<li index="3" data-val="10">10%</li>
+					<li index="4" data-val="15">15%</li>
+					<li index="5" data-val="20">20%</li>
+					<li index="6" data-val="25">25%</li>
+					<li index="7" data-val="30">30%</li>
+				</ul>
+			</div>-->
+		</div>
+		<!--end-->
+		<!--?弹出提示框-->
+		<div class="dialog" >
+			
+			<div class="dialog_cont">
+				<i class="close"></i>
+				<h3 class="dialog_head">目标涨幅</h3>
+				<div class="dialog_body">
+					<ul>
+						<li><p>1.</p><p>起算价：<br/>①笔记在某日9:20-12:55发布，按当日下午开盘价起算；<br/>②笔记在某日12:55-次日9:20发布，按次日开盘价起算</p></li>
+						<li><p>2.</p><p>起算日为T日，自T+1日起至结束，盘中达到过目标涨幅，视为达到目标</p></li>
+						<li><p>3.</p><p>若笔记无效，退回双方资金：<br/>①T日自起算至收盘一直封涨停或停牌，笔记无效；<br/>②笔记未达目标，但截止日股票处于停牌，笔记无效</p></li>
+					</ul>
+				</div>
+				<p class="dialog_footer"><a href="javascript:void(0);">我知道了</a></p>
+			</div>
+		</div>
+		<nav class="footer_Info">
+		    <a href="attenList.html" class="clickHove"><i class="index"></i><span>首页</span></a>
+			<a href="noteRecord.html" class="clickHove"><i class="note"></i><span>笔记</span></a>
+			<a href="createNote.html" class="clickHove"><i class="writeNote"></i><span>写笔记</span></a>
+			<a href="mynote.html" class="clickHove"><i class="my"></i><span>我的</span></a>
+		</nav>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/createNote.js"></script>
+	</body>
+
+</html>

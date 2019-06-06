@@ -1,0 +1,105 @@
+@import "public";
+$fontSize:28rem/$default-fontSize;
+.page-cont{
+    padding:0 55rem/$default-fontSize;
+    text-align: center;
+}
+.tip_img{
+    margin:104rem/$default-fontSize 0 74rem/$default-fontSize;
+    height:427rem/$default-fontSize;
+    width:427rem/$default-fontSize;
+}
+.bgLine{
+    position:absolute;
+    top:50%;
+//  border-bottom:1px solid $color;
+    width:20%;
+   // height:33rem/$default-fontSize;
+    //background:url(../img/line.png) 20px center repeat-x,url(../img/rect.jpg) 0 center no-repeat;
+}
+.peoplenameInfo{
+    position:relative;
+    font-size:$fontSize;
+    font-weight: bold;
+    .left{
+        left:0;
+        @extend .bgLine;
+        height:33rem/$default-fontSize;
+        transform:translateY(-50%);
+    }
+    .right{
+        right:0;
+        @extend .bgLine;
+        transform:rotateY(180deg) translateY(-50%);
+        height:33rem/$default-fontSize;
+    }
+}
+.left_img{
+    position:absolute;
+    left:0;
+    background:url(../img/line.png) 10px center repeat-x;
+    height:100%;
+    width:90%;
+    background-size:100% 4rem/$default-fontSize;
+}
+.right_img{
+    position:absolute;
+    right:0;
+    background:url(../img/rect.png) 0 center no-repeat;
+    height:100%;
+    width:35%;
+    background-size:100% 100%;
+}
+.peoplename{
+    font-size:$fontSize;
+    line-height: 38rem/$default-fontSize;
+    color:#252525;
+}
+.success_detail{
+    display:table;
+    width:100%; 
+    font-size:$fontSize;
+    line-height: 38rem/$default-fontSize;
+    padding:14rem/$default-fontSize 35rem/$default-fontSize 21rem/$default-fontSize 28rem/$default-fontSize;
+    background-color:rgba(241,84,56,.1);
+    @include css3(border-radius,3px);
+    @include css3(box-sizing,border-box);
+    margin:20rem/$default-fontSize 0 35rem/$default-fontSize;
+    >span{ 
+        display:table-cell;
+        text-align: center;
+        color:#252525;
+        &:first-child{
+            text-align: left; 
+        }
+        &:last-child{
+            text-align: right;
+        }
+        strong{
+            text-align: center;
+            display: inline-block;
+        }
+        em{
+           font-size:20rem/$default-fontSize;
+           color:#969696;
+           line-height: 26rem/$default-fontSize; 
+        }
+    }
+  
+}
+.copy_btn{
+    width:345rem/$default-fontSize; 
+    height:50rem/$default-fontSize;
+    line-height: 50rem/$default-fontSize;
+    margin:10rem/$default-fontSize 0 10rem/$default-fontSize;
+}
+.link_addr{
+    font-size:$fontSize;
+    line-height: 28rem/$default-fontSize;
+    color:#000000;
+}
+.copy_tip{
+    color:#969696;
+    font-size:24rem/$default-fontSize;
+    line-height: 24rem/$default-fontSize;
+}

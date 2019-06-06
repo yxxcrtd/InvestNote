@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+	    <link rel="stylesheet" href="css/noteDetail.css" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	    <script src="js/flexible.js"></script>
+	    <script type="text/javascript" src="js/zepto.min.js" ></script>
+	    <script type="text/javascript" src="js/fastclick.js" ></script>
+	    <title>投资笔记</title>
+	</head>
+	<body>
+		<section class="footAdap">
+			<header class="head">
+			<div class="head_content clearfix">
+				<a href="authorsuccess.html"><img src="img/homePage/user_head.jpg" alt="头像"/></a>
+				<dl class="headInfo">
+					<dt>李剑泽<i></i></dt>
+					<dd><a href="javascript:void(0);">关注55</a><a href="javascript:void(0);">粉丝66</a></dd>
+				</dl>
+				<a href="javascript:void(0);" class="atten_btn" id="atten_btn">关注</a>
+			</div>
+			<div class="success_detail">
+				<span>002***<br/><em>股票代码</em></span>
+				<span>20%<br/><em>目标涨幅</em></span>
+				<span>12日<br/><em>实现日期</em></span>
+			</div>
+		</header>
+			<!--添加defalut下面部分将使用默认页，无图章页面-->
+			<div class="detail_list clearfix default">
+				<dl>
+					<dt>股票</dt>
+					<dd><strong class="colorf15438">科大讯飞</strong><!--<b>科大讯飞</b>-->&nbsp;&nbsp;<em class="gpcode">600000</em></dd>
+				</dl>
+				<dl>
+					<dt>逻辑</dt>
+					<dd>远看成龙近似虫，预期估值各不同；不识讯飞真价值，只缘身陷小利中</dd>
+				</dl>
+				<dl>
+					<dt>目标</dt>
+					<dd class="clearFont"><span class="fontSize26">5日涨<strong class="colorf15438">35%</strong></span><em class="color2e54a5 why1" id="payBtn"></em><!--<b>涨35%[?]</b>--></dd>
+				</dl>
+				<dl>
+					<dt>起始</dt>
+					<dd>02月28日 09:20（起算价&nbsp;<em class="color2e54a5">待开盘</em><!--<b>待开盘</b>-->）</dd>
+				</dl>
+				<dl>
+					<dt>截止</dt>
+					<dd class="pl">02月28日 15:00（目标价<em class="color2e54a5">待开盘</em><!--<b>待开盘</b>-->）
+						<!--成功图章-->
+			<!--	<div class="chapter_success"></div>-->
+						<!--失败图章-->
+					<!-- 	<div class="chapter_success chapter_fail"> -->
+						<!--失效-->
+						<div class="chapter_success chapter_disable"></div></dd>
+				</dl>
+			</div>
+			<div class="readInfo">
+				<!--默认页面底部-->
+			<!--<em class="newMoney">最新价</em>
+				<p class="mb132">阅读费100元 阅读20人<br/>若不达目标，阅读费退回，作者额外发红包</p>-->
+				
+				<!--可分享的底部-->
+			<em class="newMoney">最新价</em>
+				<p>阅读费100元 阅读20人</p>
+				<div class="moreBtn mg68">
+			        <a id="share">分享好友</a><a>预览</a>
+			    </div>
+				<!--成功-->
+<!--<p class="mt45 mb158">阅读费100元 阅读5人</p>-->
+				
+				
+				
+				<!--失败页面-->
+				<!--<p class="mt45 mb122">阅读费100元 红包20元 阅读5人<br/>
+				已退回<strong class="colorf15438 fsize">120</strong>元 <a class="color2e54a5 fsize">查看流水</a></p>
+			-->
+			</div>
+		</div>
+						<!--用户列表 start-->
+			<div class="textalign plpd">
+				<div class="readPeopleInfo textalign" id="dz"><a href="javascript:void(0);"><i class="defalut_good showLike" targetid="good"></i><span  id="good"  class="color969696">20</span></a><a href="javascript:void(0);"><i class="default_nogood showLike"  targetid="nogood"></i><span id="nogood"  class="color969696">20</span></a></div>
+				<ul class="user-list clearfix">
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><img src="img/homePage/user.png"/></li>
+						<li><a href="userHeadShow.html"><div class="showMore">...</div></a></li>
+				</ul>
+			</div>
+				<!--end-->
+				
+				
+				<!--评论-->
+		<div class="commontDetail">
+			<header class="commontHead">
+				评论<a id="writeCom" href="javascript:void(0);">写评论...</a>
+			</header>
+			<ul class="commontCont">
+				<li>
+					<img src="" alt="头像"/>
+					<div class="commontWord">
+						<p>李建泽<br/><em>10分钟前</em></p>
+						<p>三江化工最近涨幅一倍，酷派低点到高点60倍了推荐信达，有人研究吗，从市值到增长，不亚于银行，还有寿险</p>
+					</div>
+				</li>
+				<li>
+					<img src="" alt="头像"/>
+					<div class="commontWord">
+						<p>李建泽<br/><em>10分钟前</em></p>
+						<p>三江化工最近涨幅一倍，酷派低点到高点60倍了推荐信达，有人研究吗，从市值到增长，不亚于银行，还有寿险</p>
+					</div>
+				</li>
+				<li>
+					<img src="" alt="头像"/>
+					<div class="commontWord">
+						<p>李建泽<br/><em>10分钟前</em></p>
+						<p>三江化工最近涨幅一倍，酷派低点到高点60倍了推荐信达，有人研究吗，从市值到增长，不亚于银行，还有寿险</p>
+					</div>
+				</li>
+				<li>
+					<img src="" alt="头像"/>
+					<div class="commontWord">
+						<p>李建泽<br/><em>10分钟前</em></p>
+						<p>三江化工最近涨幅一倍，酷派低点到高点60倍了推荐信达，有人研究吗，从市值到增长，不亚于银行，还有寿险</p>
+					</div>
+				</li>
+				<li>
+					<img src="" alt="头像"/>
+					<div class="commontWord">
+						<p>李建泽<br/><em>10分钟前</em></p>
+						<p>三江化工最近涨幅一倍，酷派低点到高点60倍了推荐信达，有人研究吗，从市值到增长，不亚于银行，还有寿险</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+			<div id="load" class="loading">
+				<a href="javascript:void(0);"><img src="img/loading.gif"/><span>正在加载</span></a>
+			</div>
+			<!--评论结束	-->
+	    <div id="footer">
+			<div class="footer_fg">&nbsp;<p>笔记仅供参考</p><span class="left"></span><span  class="right"></span></div>
+			<a class="footer_authInfo"  href="cmtz.html">由&nbsp;<span>财猫投资笔记</span>&nbsp;提供技术支持</a>
+		</div>	
+		</section>
+		<div class="share_tip">
+        	<i></i>
+    	</div>
+    	
+    	<!--写评论-->
+    	<div class="writeCom">
+			<textarea rows="5" cols="5" placeholder="写评论..." id="commontCont"></textarea>
+			<div class="commentBtn">
+				<span id="cancel">取消</span><a href="javascript:void(0);" class="hover" hoverClass="hoverClass" id="writeCom_btn">发表</a>
+			</div>
+		</div>
+		<!--写评论结束-->
+    	<!--?弹出提示框-->
+	<div class="dialog" >
+			<div class="dialog_cont">
+				<i class="close"></i>
+				<h3 class="dialog_head">目标涨幅</h3>
+				<div class="dialog_body">
+					<ul>
+						<li><p>1.</p><p>起算价：<br/>①笔记在某日9:20-12:55发布，按当日下午开盘价起算；<br/>②笔记在某日12:55-次日9:20发布，按次日开盘价起算</p></li>
+						<li><p>2.</p><p>起算日为T日，自T+1日起至结束，盘中达到过目标涨幅，视为达到目标</p></li>
+						<li><p>3.</p><p>若笔记无效，退回双方资金：<br/>①T日自起算至收盘一直封涨停或停牌，笔记无效；<br/>②笔记未达目标，但截止日股票处于停牌，笔记无效</p></li>
+					</ul>
+				</div>
+				<p class="dialog_footer"><a href="javascript:void(0);">我知道了</a></p>
+			</div>
+		</div>
+		<!--二维码弹出框-->
+		<div class="tcode_mask" style="display:none;">
+			<div class="tcode_img">
+				<div>
+					<img src="img/twocode.png">
+					<p >关注“笔记”公众号<br/>
+					跟踪szf的分析</p>
+				</div>
+				<p  class="tcode_btn">关闭</p>
+			</div>
+		</div>
+		<nav class="footer_Info">
+			<a href="attenList.html" class="clickHove"><i class="index"></i><span>首页</span></a>
+			<a href="noteRecord.html" class="clickHove"><i class="note"></i><span>笔记</span></a>
+			<a href="createNote.html" class="clickHove"><i class="writeNote"></i><span>写笔记</span></a>
+			<a href="mynote.html" class="clickHove"><i class="my"></i><span>我的</span></a>
+		</nav>
+		<script src="js/public.js"></script>
+		<script src="js/noteDetail.js"></script>
+	</body>
+</html>

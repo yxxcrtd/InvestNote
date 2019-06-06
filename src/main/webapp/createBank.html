@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+	    <link rel="stylesheet" href="css/createBank.css" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	    <script src="js/flexible.js"></script>
+	    <script type="text/javascript" src="js/zepto.min.js" ></script>
+    	<script src="js/jquery-1.11.1.min.js"></script>
+	    <script type="text/javascript" src="js/fastclick.js" ></script>
+	    <title>投资笔记</title>
+	</head>
+	<body target="submit">      
+				<div class="head_top">
+				<div>
+					<a class="createNoteBtn" href="createNote.html"><i></i>写笔记</a><a href="tabPage.html">我的</a>
+				</div>
+			</div>
+		<form id="createBank">
+			<div class="txt_list">
+				<div class="input_txt clearfix">
+					<label>姓名</label>
+					<input type="text" require="true" tip="姓名不能为空"/>
+				</div>
+				<div class="input_txt clearfix">
+					<label>选择银行</label>
+					<input type="text" id="select" readonly="">
+					<input type="hidden" id="bank_no" />
+					 <div data-role="fieldcontain" class="demo-cont" id="demo_cont_select" style="display:none;">
+			            <select name="Cities" id="demo_select" data-role="none">
+			                <option value="1">工商银行</option>
+			                <option value="2">建设银行</option>
+			                <option value="3">农业银行</option>
+			                <option value="4">邮政储蓄银行</option>
+			                <option value="5">中国银行</option>
+			                <option value="6">交通银行</option>
+			                <option value="7">招商银行</option>
+			                <option value="8">光大银行</option>
+			                <option value="9">浦发银行</option>
+			                <option value="10">华夏银行</option>
+			                <option value="11">广东发展银行</option>
+			                <option value="12">中信银行</option>
+			                <option value="13">兴业银行</option>
+			                <option value="14">民生银行</option>
+			                <option value="15">杭州银行</option>
+			                <option value="16">上海银行</option>
+			                <option value="17">宁波银行</option>
+			                <option value="18">平安银行</option>
+			            </select>   
+			        </div>
+				</div>
+				<div class="input_txt clearfix" >
+					<label>省市</label>
+					<input type="text"  id="treelist_dummy" readonly="">
+					<input type="hidden" id="Province"/>
+					<input type="hidden" id="city"/>
+					<ul id="treelist" style="display:none;">  
+					</ul>  
+				</div>
+				<div class="input_txt clearfix">
+					<label>开户行</label>
+					<input type="text"  require="true" tip="开户行不能为空"/>
+				</div>
+				<div class="input_txt clearfix">
+					<label>卡号</label>
+					<input type="text"/>
+				</div>
+			</div>
+			<div class="txt_list">
+				<div class="input_txt input_auth clearfix">
+					<label>+86<i></i></label>
+					<input type="tel" placeholder="请输入手机号码"  require="true" dataType="^1[3|4|5|8][0-9]\d{8}$" tip="电话号码不能为空且为11位数字"/>
+				</div>
+				<div class="input_txt input_authVal clearfix">
+					<input type="text"  require="true"/>
+					<label id="getAuthCode"  time="10" require="true" tip="验证码不能为空"><i></i><span>获取验证码</span></label>
+				</div>
+			</div>
+			<!--提示框-->
+			<a class="footer_btn btnDisdefalut" id="submit">提交</a>
+			<div class="dialog_tip_cont">您的号码有误，请重新输入</div>
+			</form>
+  		 <nav class="footer_Info">
+			<a href="attenList.html" class="clickHove"><i class="index"></i><span>首页</span></a>
+			<a href="noteRecord.html" class="clickHove"><i class="note"></i><span>笔记</span></a>
+			<a href="createNote.html" class="clickHove"><i class="writeNote"></i><span>写笔记</span></a>
+			<a href="mynote.html" class="clickHove"><i class="my"></i><span>我的</span></a>
+		</nav>
+
+    <script src="js/mobiscroll/mobiscroll.min.js"></script>
+    <link href="css/mobiscroll/mobiscroll.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/public.js"></script>
+	<script src="js/createBank.js"></script>
+	</body>
+</html>

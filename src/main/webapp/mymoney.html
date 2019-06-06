@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/mymoney.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<script src="js/flexible.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/fastclick.js"></script>
+		<title>投资笔记</title>
+	</head>
+
+	<body>
+		<div class="footAdap">
+		<div class="head_top">
+			<div>
+				<a class="colorf15438">写笔记</a><i></i><a>我的</a>
+			</div>
+		</div>
+		<!--<header class="header_cont">
+				<div class="head_top">
+					<div>
+						<a class="colorf15438">创建</a><i></i><a>我的</a>
+					</div>
+				</div>
+				<div class="head_content clearfix">
+					<img src="img/homePage/user_head.jpg" alt="头像"/>
+					<dl>
+						<dt>李剑泽</dt>
+						<dd>笔记6篇<span>成功率80%</span>平均收益27%</dd>
+					</dl>
+				</div>
+			</header>-->
+		<!--列表头-->
+		<!--<div class="list_head">
+				<ul class="clearfix">
+					<li><a>我阅读的笔记</a></li>
+					<li><a>我创作的笔记</a></li>
+					<li class="active"><a>资&nbsp;&nbsp;金</a></li>
+				</ul>
+			</div>-->
+		<!--第一个列表 start-->
+		<div class="list">
+			<a href="mytx.html">
+				<div class="item-left">
+					<i class="icon1"></i>
+					<span>账户余额（提现）</span>
+				</div>
+				<div class="item-right">
+					<span>1000.00元</span>
+					<i  class="icon4"></i>
+				</div>
+			</a>
+		</div>
+		<!--end-->
+		<p class="btnDis"><a class="btn btn1" target="sel_mask" id="moneyTypeSel"  defaultVal="3"><span id="selTitle">资金明细</span><i class="arrow"></i></a></p>	
+		<!--下拉-->
+		<!--第二个列表 start-->
+		<div class="list_suce">
+			<ul>
+				<li>提现<br/><em class="colorcfcfcf">2016-3-15 10:12:36</em></li>
+				<li><em class="color1da158">-3.00</em><br/><em class="colorcfcfcf">已处理</em></li>
+			</ul>
+			<ul>
+				<li><em>提现</em><br/><em class="colorcfcfcf">2016-3-15 10:12:36</em></li>
+				<li><em class="color1da158">-50.00</em><br/><em class="colorf15438">审核中</em></li>
+			</ul>
+			<ul>
+				<li>笔记收益<br/><em class="colorcfcfcf">2016-3-15 10:12:36</em></li>
+				<li>+1000<br/><em class="colorcfcfcf">已处理</em></li>
+			</ul>
+			<ul>
+				<li>笔记收益<br/><em class="colorcfcfcf">2016-3-15 10:12:36</em></li>
+				<li>+1000</li>
+			</ul>
+			<ul>
+				<li>笔记收益<br/><em class="colorcfcfcf">2016-3-15 10:12:36</em></li>
+				<li>+20</li>
+			</ul>
+			<ul>
+				<li>笔记收益<br/><em class="colorcfcfcf">2016-3-15 10:12:36</em></li>
+				<li><em class="color1da158">-3.00</em></li>
+			</ul>
+			<ul>
+				<li>笔记收益<br/><em class="colorcfcfcf">2016-3-15 10:12:36</em></li>
+				<li><em class="color1da158">-3.00</em></li>
+			</ul>
+			<ul>
+				<li>笔记收益<br/><em class="colorcfcfcf">2016-3-15 10:12:36</em></li>
+				<li><em class="color1da158">-3.00</em></li>
+			</ul>
+		</div>
+		<div id="load" class="loading">
+			<a href="javascript:void(0);"><img src="img/loading.gif"/><span>正在加载</span></a>
+		</div>
+		<!--end-->
+		<!--下拉start-->
+		<div class="sel_mask">
+			<div class="sel">
+				<div class="title"><span>资金明细</span><i class="arrow"></i></div>
+				<ul class="selItem" target="#selTitle">
+					<li index="0" data-val="2" >选项一</li>
+					<li index="1" data-val="3" selected="true">选项二</li>
+					<li index="2" data-val="4">选项三</li>
+					<li index="0" data-val="2" >选项一</li>
+					<li index="1" data-val="3" selected="true">选项二</li>
+					<li index="2" data-val="4">选项三</li>
+					<li index="0" data-val="2" >选项一</li>
+					<li index="1" data-val="3" selected="true">选项二</li>
+					<li index="2" data-val="4">选项三</li>
+					<li index="0" data-val="2" >选项一</li>
+					<li index="1" data-val="3" selected="true">选项二</li>
+					<li index="2" data-val="4">选项三</li>
+					<li index="0" data-val="2" >选项一</li>
+					<li index="1" data-val="3" selected="true">选项二</li>
+					<li index="2" data-val="4">选项三</li>
+				</ul>
+			</div>
+		</div>
+		<!--end-->
+				<div id="footer">
+			<div class="footer_fg">&nbsp;<p>笔记仅供参考</p><span class="left"></span><span  class="right"></span></div>
+			<a class="footer_authInfo"  href="cmtz.html">由&nbsp;<span>财猫投资笔记</span>&nbsp;提供技术支持</a>
+		</div>
+		</div>
+		<nav class="footer_Info">
+			<a href="attenList.html" class="clickHove"><i class="index"></i><span>首页</span></a>
+			<a href="noteRecord.html" class="clickHove"><i class="note"></i><span>笔记</span></a>
+			<a href="createNote.html" class="clickHove"><i class="writeNote"></i><span>写笔记</span></a>
+			<a href="mynote.html" class="clickHove"><i class="my"></i><span>我的</span></a>
+		</nav>
+		<script src="js/public.js"></script>
+		<script src="js/mymoney.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,105 @@
+@import "public";
+$head_bg:#f5f5f5;   
+section{
+    min-height: 100%;
+    background: $head_bg;
+    overflow: hidden;
+}
+@mixin borderStyle($value){
+    @if $value==1{
+        border-top:1px solid #e2e2e2;
+    }
+    border-bottom:1px solid #e2e2e2;
+}
+@mixin css3($type:transform,$value:translateY(-50%)){
+    @each $css3 in 0,-webkit-,-moz-,-ms-{
+        @if $css3==0{
+            #{$type}:$value; 
+        }@else{
+            #{$css3}#{$type}:$value;    
+        }
+    }
+}
+.mr24{  
+    margin-right:24rem/$default-fontSize; 
+}
+.mt24{
+    margin-top:24rem/$default-fontSize;     
+} 
+.flex{
+    display:-moz-box;
+    display:-webkit-box;  
+    display:box;
+    display: -ms-flex; 
+    display: -webkit-flex;
+    display: flex;
+    @include css3(box-align,center); 
+}
+.moneyNum{ 
+    color:#f47e6e;
+}
+.list{
+    @mixin icon($index){
+        @if $index==4{
+            height:28rem/$default-fontSize;
+            width:22rem/$default-fontSize;
+            margin-right:24rem/$default-fontSize;
+            margin-left:20rem/$default-fontSize;
+        }
+    }
+    padding-left:24rem/$default-fontSize;
+    @include borderStyle(1);
+    background: #fff;
+    font-size:28rem/$default-fontSize;
+    color:#282828;
+    >a{
+        @extend .flex;
+        @include css3(align-items,center);
+        height: 87rem/$default-fontSize;
+        @include borderStyle(0);
+        width: 100%;
+        box-sizing: border-box;
+        &{
+            color:#282828;
+        }
+    }
+    .icon4{
+        @include icon(4);
+        background:url(../img/mynote/icon4.png) 0 0 no-repeat;
+        background-size:100% 100%;
+        display:inline-block;
+        vertical-align: middle;
+    }
+    .item-left{
+         @include css3(flex,1);
+         >.pay{
+             @extend .flex;
+             @include css3(align-items,center);
+             img{
+                 width:61rem/$default-fontSize;
+                 height: 61rem/$default-fontSize;
+                 margin-right:25rem/$default-fontSize;
+             }
+             >span{
+                 display:inline-block;
+                 font-size:28rem/$default-fontSize; 
+                 line-height: 38rem/$default-fontSize;
+             }
+             em{
+                 color:#adadad;
+                 font-size:22rem/$default-fontSize;
+             }
+         }
+    }
+    >a:first-child{
+        border-top:none;
+    }
+    >a:last-child{
+        border-bottom: none;
+    }
+    .item-right{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+    }
+}

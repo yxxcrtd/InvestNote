@@ -1,0 +1,228 @@
+@import "public";
+$head_bg:#f5f5f5;  
+
+//css3 compatibility
+@mixin css3($type:transform,$value:translateY(-50%)){
+    @each $css3 in 0,-webkit-,-moz-,-ms-{
+        @if $css3==0{
+            #{$type}:$value;
+        }@else{
+            #{$css3}#{$type}:$value; 
+        }
+    }
+}
+//page bg
+body{
+    background-color: $head_bg; 
+} 
+.mgup{display:block;overflow: hidden;}    
+.card_infoShow{ 
+    padding:27rem/$default-fontSize 0 29rem/$default-fontSize;
+    border-top:1px solid #e5e5e5; 
+    border-bottom:1px solid #e5e5e5; 
+    margin:24rem/$default-fontSize 0;  
+    position: relative; 
+    background-color:#fff;  
+    >img{  
+        position:absolute;
+        top:0;
+        bottom:0;
+        margin:auto 0 auto 24rem/$default-fontSize;
+        $val:54rem/$default-fontSize;  
+        width:$val; 
+        height:$val;
+    }
+}
+.bank_cont{
+    margin-left:106rem/$default-fontSize;
+    font-size:28rem/$default-fontSize;
+    >p:nth-child(1){
+        color:#757575;
+    }
+    >p:nth-child(2){
+        color:#969696;
+    }
+}
+$left:24rem/$default-fontSize;
+// roll out money
+.outMoney,.outMoneyPass{
+    $height:87rem/$default-fontSize;
+    border-top:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
+    height: $height;
+    padding:0 $left;
+    background-color: #fff;
+    position:relative;
+    >label{
+       line-height: 87rem/$default-fontSize;
+       font-size:28rem/$default-fontSize;
+       color:#282828;
+    }
+    //input
+    >.txt{
+        position:absolute;
+        top:50%;
+        @include css3(transform,translateY(-50%));
+        left:160rem/$default-fontSize;
+        right:24rem/$default-fontSize;
+        $x:30rem/$default-fontSize;
+        >input{
+            width:100%;
+            border:none;
+            $height:50rem/$default-fontSize;
+            height:$height;
+            font-size:28rem/$default-fontSize;
+            line-height:$height;
+            box-sizing: border-box;
+            padding-right:$x;
+            &:focus{
+                outline: none;
+            }
+        }
+        // input clear text
+        .clearCont{
+            display: none;
+            background:url(../img/x.png) 0 0 no-repeat;
+            position: absolute;
+            right:0;
+            width:$x;
+            height: $x;
+            background-size: cover;
+            top:50%;
+            @include css3(transform,translateY(-50%));
+        }
+    }
+}
+.mt20{
+    margin-top:20rem/$default-fontSize;
+}
+.mt24{
+    margin-top:24rem/$default-fontSize;
+}
+//tip
+.tip{
+    font-size:22rem/$default-fontSize;
+    color:#a4a4a4;
+    padding:11rem/$default-fontSize 0 0 24rem/$default-fontSize;
+}
+.rule_tip{
+    font-size:22rem/$default-fontSize;
+    text-align: center;
+    color:#b1b1b1;
+    margin-top:10rem/$default-fontSize;
+    >a{
+        color:#2e54a5;
+    }
+}
+.mask{
+    display:none;
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(127,127,127,.5);
+    overflow: hidden;
+    z-index:5;
+}
+//input pass
+.inputPass{
+    padding:0 24rem/$default-fontSize;
+    height:718rem/$default-fontSize;
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background: #fff;
+    @include css3(transform,translate3d(0,100%,0));
+    @include css3(transition,transform 1s);
+    >p{
+        color:#969696;
+        font-size:22rem/$default-fontSize;
+        text-align: center;
+        padding:33rem/$default-fontSize 0 19rem/$default-fontSize;
+    }
+    em{
+        font-size:36rem/$default-fontSize;
+        color:#282828;
+        margin-left:12rem/$default-fontSize;
+    }
+    .outMoneyPass{
+        margin:0 -24rem/$default-fontSize!important;
+    }
+}
+//input list
+ $border:1px solid #ededed;
+.txt_list{
+    background: #fff;
+    padding-left:24rem/$default-fontSize;
+    border-bottom:$border;
+    border-top:$border;
+    margin-top:15rem/$default-fontSize;
+}
+.input_txt{
+    $labelW:(160/616)*100%;
+    $height:87rem/$default-fontSize;
+    height:$height;
+    $fontSize:28rem/$default-fontSize;
+    font-size:$fontSize;
+    border-bottom:$border;
+    &:last-child{
+        border-bottom:none;
+    }
+    >label{
+        float:left;
+        line-height:$height;
+        width:$labelW;
+    }
+    >input{
+        width:100%-$labelW;
+        height:100%;
+        float:left;
+        border:none;
+        outline: none;
+        font-size:$fontSize;
+    }
+}
+.iClass{
+    height:40px;
+    border-right:1px solid #dcdcdc;
+    position: absolute;
+    right:0;
+    bottom:0;
+    top:0;
+    margin:auto 0;
+}
+.input_auth{
+    >label{
+         width:(76/616)*100;
+         position:relative;
+         >i{
+           @extend .iClass;
+        }
+    }
+    >input{
+       width:(433/616)*100%; 
+       padding-left:3%;
+    }
+}
+.input_authVal{
+    >label{
+        width:(183/616)*100%;
+        position: relative;
+        text-align:center;
+        color:#f15438;
+        >i{
+            @extend .iClass;
+            left:0;
+            right:auto;
+        }
+    }
+    >input{
+        width:(433/616)*100%;
+    }
+}
+//get auth code
+.disAuthCode span{
+    color: #8E8E8E;
+}

@@ -1,0 +1,145 @@
+@import "public";
+@mixin css3($type:transform,$value:translateY(-50%)){
+    @each $css3 in 0,-webkit-,-moz-,-ms-{
+        @if $css3==0{
+            #{$type}:$value;
+        }@else{
+            #{$css3}#{$type}:$value;
+        }
+    }
+}
+.colorf15438{
+    color:#f15438;
+}
+.colorff6000{  
+    color:#ff6000; 
+}
+.flex{ 
+    display:-moz-box; 
+    display:-webkit-box; 
+    display:box; 
+//  display: -ms-flex; 
+//  display: -webkit-flex; 
+//  display: flex; 
+    @include css3(box-align,center);  
+} 
+.header_cont{  
+    padding-bottom:0;   
+}
+$left:24rem/$default-fontSize;
+@mixin list(){
+    >li{
+//      @include css3(flex,1);
+        @include css3(box-flex,1); 
+    }
+     >li:nth-child(1){
+        width:42%;
+    }
+    >li:nth-child(2){
+        text-align: left; 
+        width:37.5%;
+    }
+    >li:nth-child(3){
+        width:20%;
+        text-align: right;
+    }
+}
+.listHead{ 
+    background:#f5f5f5;
+    @extend .flex;
+    height:63rem/$default-fontSize;
+    @include css3(align-items,center);
+    padding:0 $left;
+    font-size:24rem/$default-fontSize;
+    color:#afafaf;
+    @include list();
+    width: 100%;
+    box-sizing: border-box;
+}
+.tab{
+    border-bottom:1px solid #dcdcdc;
+    position:relative;
+    height:87rem/$default-fontSize;
+    text-align: center;
+    line-height: 87rem/$default-fontSize;
+    >div{
+        position:absolute;
+        bottom:-1px;
+        width:50%;
+        height:100%;
+        font-size:28rem/$default-fontSize;
+        color:#969696;
+    }
+    .ending{
+        left:50%;
+    }
+    .active{
+        border-bottom:1px solid #f15438;
+        color:#f15438;
+    }
+}
+.starting_cont{
+    display:none;
+}
+.borderB{
+    border-bottom:1px solid #dcdcdc;
+}
+.borderBT{
+    @extend .borderB;
+    border-top:1px solid #dcdcdc;
+}
+.ml30{margin-left:-$left;}
+.list_suce{
+    @mixin icon(){
+        background-size: 100% 100%;
+        $height:95rem/$default-fontSize;
+        height:$height;
+        width: $height;
+        position:absolute;
+        left:(387/617)*100%; 
+        top:50%;
+        @include css3(transform,translateY(-50%));
+    }
+    padding-left:$left;
+    @extend .borderBT;
+    ul{
+        padding-right:$left;
+        margin-left:$left;
+        height: 119rem/$default-fontSize;
+        @extend .flex;
+        @extend .borderB;
+        @include css3(align-items,center);
+        @include list();
+        font-size:28rem/$default-fontSize;
+        color:#282828;
+        position:relative;
+    }
+    div.ml30:last-child ul{
+      border-bottom:none;  
+    } 
+    .icon1{
+        background:url(../img/db.png) 0 0 no-repeat;
+        @include icon();
+    }
+    .icon2{
+        background:url(../img/dbdis.png) 0 0 no-repeat;
+        @include icon();
+    }
+    .icon3{
+        background:url(../img/diableImg.png) 0 0 no-repeat;
+        @include icon();
+    }
+    .colorf15438{
+        color:#f15438;
+    }
+    .colorb4b4b4{
+        color:#B4B4B4;
+    }
+}
+.increase{
+    text-align: left;
+    display: inline-block;
+}
+.Fsize20{
+    font-size:22rem/$default-fontSize;
+}

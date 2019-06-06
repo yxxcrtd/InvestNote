@@ -1,0 +1,211 @@
+//$pageHeight:600/100;
+$pageWidth:1920/100;
+@mixin filter1($val,$val1){
+    filter:alpha(opacity=$val); 
+    -moz-opacity:$val1; 
+    opacity:$val1;
+}
+@mixin css3($type:transform,$value:translateY(-50%)){
+    @each $css3 in 0,-webkit-,-moz-,-ms-{
+        @if $css3==0{
+            #{$type}:$value;
+        }@else{
+            #{$css3}#{$type}:$value;
+        }
+    }
+}
+*{
+    margin:0;
+    padding:0;
+    font-family: "microsoft yahei","MicrosoftYaHeiLight";
+  -webkit-text-size-adjust: none;
+}
+.clearfix:after {
+  clear: both;
+  height: 0;
+  visibility: hidden;
+  display: block;
+  content: ""; }
+  html,body{
+    width:100%;
+    height:100%;
+    background-color:#e83b22;
+     background:url(../img/pc/K.png) center 10% no-repeat fixed #e83b22;
+  }
+  .page-content{
+       width:100%;
+    height:100%;
+      @include css3(background-image,radial-gradient(circle,rgba(255,218,66,.2),rgba(255,218,66,.1)));
+  }
+.head{
+    position:relative;
+}
+.mask{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:100%;
+    @include filter1(10,.1); 
+    background-color:#fff;
+}
+.head_cont{
+    position:absolute;
+    z-index:5;
+    color:#fff;
+    padding:26px 0 15px;
+    width:100%;
+    img{ 
+        width:35px;
+        height:38px;
+        vertical-align: middle;
+        margin-left:(460%/$pageWidth);
+        float:left;
+    }
+    .head_title{
+        margin:0 20px 0 15px;
+        padding-right:20px;
+        border-right:1px solid #fff;
+        vertical-align: middle;
+        font-weight: bold;
+        font-size:28px;
+        float:left;
+    }
+    .head_Detail{
+        font-size:14px;
+        vertical-align: middle;
+        display: inline-block;
+        float:left;
+    }
+    .tel{
+        margin-left:515px;
+    }
+}
+
+.content{
+    width:300px;
+    padding:0 15px;
+    background-color:#f3e0db;
+    @include css3(border-radius,33px);
+    border:1px solid #fcf3f0;
+    position:absolute;
+    top:20%;
+    left:35%;
+}
+.phone{
+    
+    background-color:#f3e0db;
+    text-align: center;
+    padding:44px 0 13px;
+    @include css3(border-radius,33px);
+    behavior: url(ie-css3.htc);
+    >i{
+        display: inline-block;
+        width:10px;
+        height:10px;
+        background-color:#969696;
+        @include css3(border-radius,50%);
+        vertical-align: middle;
+    }
+    >span{
+        display: inline-block; 
+        width:60px;
+        height:4px;
+        background-color:#969696;
+        @include css3(border-radius,2px);
+        vertical-align: middle;
+        margin-left:3px;
+    }
+}
+.phone_footer{
+    text-align:center;
+    padding:13px 0;
+    >span{
+        display: inline-block;
+        height:39px;
+        width:39px;
+        @include css3(border-radius,50%);
+        background-color:#fff;
+    }
+}
+.content_phone{
+    background-color:#fff;
+    padding-top:37px;
+}
+.content_head{
+    padding:14px 16px 19px 9px;
+    background-color:#ea4a26;
+    font-size:16px;
+    >img{
+        width:42px;
+        height:42px;
+        float:left;
+        padding-right:10px;
+    }
+}
+.historyDetail{
+    color:#fff;
+    dt{
+        line-height:26px;
+        height:26px;
+    }
+    dd{
+        line-height: 12px;
+        >span{
+            font-size:12px;
+            display: table-cell;
+            width:25%;
+        }
+    }
+}
+.mgl{
+    margin-left:10px;
+}
+.detail{
+    padding:42px 32px 39px;
+//  width:100%;
+//  display: table;
+//  width:196px;
+//display:table;
+    >span{
+        display: inline-block;
+        text-align: center;
+        font-size:12px;
+        width:33.33%;
+        >em{
+            color:#e94023;
+            font-size:16px;
+            font-style:normal
+        }
+    }
+}
+.ercode{
+    text-align: center;
+    padding-bottom:86px;
+    font-size:20px;
+    color:#979797;
+    line-height: 20px;
+    letter-spacing:9px;
+    >img{
+      width:114px;
+      height: 114px;
+      margin-bottom:8px;
+    }
+}
+.pageCont_title{
+    position:absolute;
+    top:0;
+    left:100%;
+    white-space:nowrap;
+    color:#fff;
+    top:90px;
+    margin-left:29px;
+    font-size:52px;
+    $fontSize:52;
+    font-weight: bold;
+    line-height: 66px;
+    >p{
+        font-size:30px;
+        font-weight: normal;
+    }
+}
